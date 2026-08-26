@@ -1,23 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================================================
-     TABS
-  ========================================================= */
+  /* -----------------------------
+     CONNECTION TABS
+  ----------------------------- */
 
-  const tabs = document.querySelectorAll(".tab");
-  const panels = document.querySelectorAll(".tab-panel");
+  const interfaceTabs =
+    document.querySelectorAll(".interface-tab");
 
-  tabs.forEach(tab => {
+  const interfacePanels =
+    document.querySelectorAll(".interface-panel");
+
+  interfaceTabs.forEach(tab => {
 
     tab.addEventListener("click", () => {
 
-      const target = tab.dataset.tab;
+      const target = tab.dataset.interface;
 
-      tabs.forEach(item => {
+      interfaceTabs.forEach(item => {
         item.classList.toggle("active", item === tab);
       });
 
-      panels.forEach(panel => {
+      interfacePanels.forEach(panel => {
         panel.classList.toggle(
           "active",
           panel.id === target
@@ -29,22 +32,218 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* =========================================================
-     STUDENT SESSION LENGTH
-  ========================================================= */
+  /* -----------------------------
+     DURATION BUTTONS
+  ----------------------------- */
 
-  document.querySelectorAll(".duration-row").forEach(row => {
+  document
+    .querySelectorAll(".duration-row")
+    .forEach(row => {
 
-    row.querySelectorAll("button").forEach(button => {
+      row.querySelectorAll("button")
+        .forEach(button => {
+
+          button.addEventListener("click", () => {
+
+            row.querySelectorAll("button")
+              .forEach(item =>
+                item.classList.remove("selected")
+              );
+
+            button.classList.add("selected");
+
+          });
+
+        });
+
+    });
+
+
+  /* -----------------------------
+     STUDENT MATCH
+  ----------------------------- */
+
+  document
+    .querySelectorAll(".find-button")
+    .forEach(button => {
 
       button.addEventListener("click", () => {
 
-        row.querySelectorAll("button").forEach(item => {
-          item.classList.remove("selected");
-        });
+        const result =
+          document.getElementById("studentMatchResult");
 
-        button.classList.add("selected");
+        if (!result) return;
 
+        button.disabled = true;
+        button.textContent = "Finding best match...";
+
+        result.textContent =
+          "Bridge is comparing topic, student need, tutor skill and availability.";
+
+        setTimeout(() => {
+
+          button.textContent = "Match found ✓";
+          button.classList.add("success");
+
+          result.textContent =
+            "Best match found: Physics tutor · 96% illustrative fit · Tuesday 4 PM.";
+
+        }, 1000);
+
+        setTimeout(() => {
+
+          button.disabled = false;
+          button.textContent = "Find my best match →";
+          button.classList.remove("success");
+
+        }, 3500);
+
+      });
+
+    });
+
+
+  /* -----------------------------
+     HERO MATCH BUTTON
+  ----------------------------- */
+
+  const heroMatch =
+    document.getElementById("heroMatchButton");
+
+  if (heroMatch) {
+
+    heroMatch.addEventListener("click", () => {
+
+      heroMatch.textContent = "Matching...";
+
+      setTimeout(() => {
+        heroMatch.textContent = "Tutor found ✓";
+      }, 900);
+
+      setTimeout(() => {
+        heroMatch.textContent = "Find a tutor →";
+      }, 2400);
+
+    });
+
+  }
+
+
+  /* -----------------------------
+     MATCHING ALGORITHM CONTROLS
+  ----------------------------- */
+
+  const average =
+    document.getElementById("studentAverage");
+
+  const funding =
+    document.getElementById("fundingDifference");
+
+  const time =
+    document.getElementById("timeFit");
+
+  const averageValue =
+    document.getElementById("averageValue");
+
+  const fundingValue =
+    document.getElementById("fundingValue");
+
+  const timeValue =
+    document.getElementById("timeValue");
+
+  const matchScore =
+    document.getElementById("matchScore");
+
+  function updateMatch() {
+
+    if (!average || !funding || !time) return;
+
+    averageValue.textContent = average.value;
+    fundingValue.textContent = funding.value;
+    timeValue.textContent = time.value;
+
+    /*
+      Illustrative prototype calculation.
+
+      The actual Bridge matching algorithm would use
+      the project's full student/tutor scoring system.
+    */
+
+    const studentNeed =
+      100 - Number(average.value);
+
+    const fundingNeed =
+      Number(funding.value);
+
+    const timeFit =
+      Number(time.value);
+
+    const score = Math.round(
+      studentNeed * 0.35 +
+      fundingNeed * 0.25 +
+      timeFit * 0.40
+    );
+
+    matchScore.textContent =
+      `${Math.max(50, Math.min(99, score))}%`;
+
+  }
+
+  [average, funding, time].forEach(input => {
+
+    if (input) {
+      input.addEventListener("input", updateMatch);
+    }
+
+  });
+
+  updateMatch();
+
+
+  /* -----------------------------
+     CALENDAR SLOTS
+  ----------------------------- */
+
+  document
+    .querySelectorAll(".time-slot")
+    .forEach(slot => {
+
+      slot.addEventListener("click", () => {
+        slot.classList.toggle("selected");
+      });
+
+    });
+
+
+  /* -----------------------------
+     AI WORKFLOW TABS
+  ----------------------------- */
+
+  const aiSteps =
+    document.querySelectorAll(".ai-step");
+
+  const aiDetails =
+    document.querySelectorAll(".ai-detail");
+
+  aiSteps.forEach(step => {
+
+    step.addEventListener("click", () => {
+
+      const target =
+        step.dataset.aiStep;
+
+      aiSteps.forEach(item => {
+        item.classList.toggle(
+          "active",
+          item === step
+        );
+      });
+
+      aiDetails.forEach(detail => {
+        detail.classList.toggle(
+          "active",
+          detail.id === target
+        );
       });
 
     });
@@ -52,81 +251,111 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* =========================================================
-     FIND MATCH DEMO
-  ========================================================= */
+  /* -----------------------------
+     LANGUAGE SWITCHER
+  ----------------------------- */
 
-  document.querySelectorAll(".find-button").forEach(button => {
+  const languageCards =
+    document.querySelectorAll(".language-card");
 
-    button.addEventListener("click", () => {
+  const languageTitle =
+    document.getElementById("languageTitle");
 
-      const original = button.textContent;
+  const languageMessages = {
+    English:
+      "Simplify. Translate. Explain again.",
 
-      button.disabled = true;
-      button.textContent = "Finding best match...";
+    Français:
+      "Simplifier. Traduire. Expliquer à nouveau.",
 
-      setTimeout(() => {
+    Kiswahili:
+      "Rahisisha. Tafsiri. Eleza tena.",
 
-        button.textContent = "96% match found ✓";
-        button.classList.add("success");
+    Amharic:
+      "ቀላል አድርግ። ተርጉም። እንደገና አብራራ።",
 
-      }, 900);
+    "العربية":
+      "بسّط. ترجم. اشرح مرة أخرى."
+  };
 
-      setTimeout(() => {
+  languageCards.forEach(card => {
 
-        button.textContent = original;
-        button.disabled = false;
-        button.classList.remove("success");
+    card.addEventListener("click", () => {
 
-      }, 2400);
+      languageCards.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      card.classList.add("active");
+
+      const language =
+        card.querySelector("strong").textContent;
+
+      languageTitle.textContent =
+        languageMessages[language] ||
+        "Simplify. Translate. Explain again.";
 
     });
 
   });
 
 
-  /* =========================================================
-     SCROLL REVEALS
-  ========================================================= */
+  /* -----------------------------
+     OFFLINE STEP INTERACTION
+  ----------------------------- */
+
+  const offlineSteps =
+    document.querySelectorAll(".offline-step");
+
+  offlineSteps.forEach(step => {
+
+    step.addEventListener("click", () => {
+
+      offlineSteps.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      step.classList.add("active");
+
+    });
+
+  });
+
+
+  /* -----------------------------
+     SCROLL REVEAL
+  ----------------------------- */
 
   if ("IntersectionObserver" in window) {
 
-    const observer = new IntersectionObserver(
-      entries => {
+    const observer =
+      new IntersectionObserver(
+        entries => {
 
-        entries.forEach(entry => {
+          entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-            entry.target.classList.add("revealed");
+              entry.target.classList.add("revealed");
 
-            observer.unobserve(entry.target);
+              observer.unobserve(entry.target);
 
-          }
+            }
 
-        });
+          });
 
-      },
-      {
-        threshold: 0.08
-      }
-    );
-
+        },
+        {
+          threshold:0.12
+        }
+      );
 
     document
       .querySelectorAll(
-        ".workflow-card, " +
-        ".ai-card, " +
-        ".student-request, " +
-        ".africa-stat, " +
-        ".offline-steps > div, " +
-        ".matching-card, " +
-        ".loop-step"
+        ".stat-row > div, .student-request, .africa-stat, .quality-item"
       )
       .forEach(element => {
-
         observer.observe(element);
-
       });
 
   }
