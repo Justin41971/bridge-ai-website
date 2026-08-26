@@ -1,42 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*
-     * BRIDGE AI PRODUCT DEMO
-     * -----------------------
-     * Handles:
-     * - Product tabs
-     * - Duration selection
-     * - Small UI interactions
-     */
 
-
-    /* =========================
+    /* =====================================================
        PRODUCT TABS
-    ========================= */
+    ===================================================== */
 
-    const tabs = document.querySelectorAll(".demo-tab");
-    const panels = document.querySelectorAll(".demo-panel");
+    const tabs =
+        document.querySelectorAll(".demo-tab");
+
+    const panels =
+        document.querySelectorAll(".demo-panel");
+
 
     tabs.forEach(tab => {
 
         tab.addEventListener("click", () => {
 
-            const target = tab.dataset.tab;
+            const target =
+                tab.dataset.tab;
 
-            tabs.forEach(t => {
-                t.classList.remove("active");
+
+            tabs.forEach(item => {
+
+                item.classList.remove("active");
+
             });
+
 
             panels.forEach(panel => {
+
                 panel.classList.remove("active");
+
             });
+
 
             tab.classList.add("active");
 
-            const targetPanel = document.getElementById(target);
+
+            const targetPanel =
+                document.getElementById(target);
+
 
             if (targetPanel) {
+
                 targetPanel.classList.add("active");
+
             }
 
         });
@@ -44,21 +52,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================
-       DURATION BUTTONS
-    ========================= */
+    /* =====================================================
+       STUDENT DURATION
+    ===================================================== */
 
-    const durationButtons = document.querySelectorAll(
-        ".duration-row button"
-    );
+    const durationButtons =
+        document.querySelectorAll(
+            ".duration-row button"
+        );
+
 
     durationButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            durationButtons.forEach(btn => {
-                btn.classList.remove("selected");
+            durationButtons.forEach(item => {
+
+                item.classList.remove(
+                    "selected"
+                );
+
             });
+
 
             button.classList.add("selected");
 
@@ -67,133 +82,388 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================
-       SMOOTH SCROLL
-    ========================= */
+    /* =====================================================
+       STUDENT CALENDAR
+    ===================================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            const targetId = link.getAttribute("href");
-
-            if (targetId === "#") {
-                return;
-            }
-
-            const target = document.querySelector(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        });
-
-    });
+    const calendarButtons =
+        document.querySelectorAll(
+            ".calendar-times button"
+        );
 
 
-    /* =========================
-       MATCHING FACTORS
-    ========================= */
-
-    const factors = document.querySelectorAll(".factor");
-
-    factors.forEach(factor => {
-
-        factor.addEventListener("mouseenter", () => {
-
-            factors.forEach(item => {
-                item.classList.remove("active");
-            });
-
-            factor.classList.add("active");
-
-        });
-
-    });
-
-
-    /* =========================
-       FAKE MATCHING BUTTON
-    ========================= */
-
-    const findButtons = document.querySelectorAll(
-        ".interface-button"
-    );
-
-    findButtons.forEach(button => {
+    calendarButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const originalText = button.textContent;
+            calendarButtons.forEach(item => {
 
-            button.textContent = "Finding your best match...";
+                item.classList.remove(
+                    "calendar-selected"
+                );
 
-            button.style.opacity = "0.7";
+            });
 
-            setTimeout(() => {
 
-                button.textContent = "Match found ✓";
-                button.style.opacity = "1";
-
-            }, 1200);
-
-            setTimeout(() => {
-
-                button.textContent = originalText;
-
-            }, 3000);
+            button.classList.add(
+                "calendar-selected"
+            );
 
         });
 
     });
 
 
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
+    /* =====================================================
+       STUDENT MATCH BUTTON
+    ===================================================== */
 
-    const revealElements = document.querySelectorAll(
-        ".workflow-card, .ai-card, .language-card, .factor"
-    );
+    const matchButton =
+        document.querySelector(
+            "#student-demo .interface-button"
+        );
 
-    const observer = new IntersectionObserver(
-        entries => {
 
-            entries.forEach(entry => {
+    const matchFeedback =
+        document.getElementById(
+            "studentMatchFeedback"
+        );
 
-                if (entry.isIntersecting) {
 
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
+    if (matchButton) {
+
+        matchButton.addEventListener(
+            "click",
+            () => {
+
+                const original =
+                    matchButton.textContent;
+
+
+                matchButton.disabled = true;
+
+                matchButton.textContent =
+                    "Analyzing your request...";
+
+
+                if (matchFeedback) {
+
+                    matchFeedback.textContent =
+                        "Bridge is comparing tutors, schedules and need.";
 
                 }
 
-            });
 
-        },
-        {
-            threshold: 0.08
-        }
-    );
+                setTimeout(() => {
+
+                    matchButton.textContent =
+                        "Best match found ✓";
 
 
-    revealElements.forEach(element => {
+                    matchButton.style.background =
+                        "#35c98b";
 
-        element.style.opacity = "0";
-        element.style.transform = "translateY(15px)";
-        element.style.transition =
-            "opacity .5s ease, transform .5s ease";
 
-        observer.observe(element);
+                    if (matchFeedback) {
+
+                        matchFeedback.textContent =
+                            "Alex Morgan · 96% fit · Tuesday 4 PM";
+
+                    }
+
+                }, 1300);
+
+
+                setTimeout(() => {
+
+                    matchButton.disabled = false;
+
+                    matchButton.textContent =
+                        original;
+
+                    matchButton.style.background =
+                        "";
+
+
+                }, 4000);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FACTOR HOVER
+    ===================================================== */
+
+    const factors =
+        document.querySelectorAll(
+            ".factor"
+        );
+
+
+    factors.forEach(factor => {
+
+        factor.addEventListener(
+            "mouseenter",
+            () => {
+
+                factors.forEach(item => {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                factor.classList.add(
+                    "active"
+                );
+
+            }
+        );
 
     });
+
+
+    /* =====================================================
+       AI LESSON ACTIONS
+    ===================================================== */
+
+    const lessonButtons =
+        document.querySelectorAll(
+            ".lesson-tools button"
+        );
+
+
+    lessonButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const oldText =
+                    button.textContent;
+
+
+                button.textContent =
+                    "Generating...";
+
+
+                setTimeout(() => {
+
+                    button.textContent =
+                        "✓ Ready";
+
+                }, 800);
+
+
+                setTimeout(() => {
+
+                    button.textContent =
+                        oldText;
+
+                }, 2200);
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       GENERATE EXAMPLE
+    ===================================================== */
+
+    const generateExample =
+        document.querySelector(
+            ".small-action"
+        );
+
+
+    if (generateExample) {
+
+        generateExample.addEventListener(
+            "click",
+            () => {
+
+                generateExample.textContent =
+                    "Example generated ✓";
+
+
+                setTimeout(() => {
+
+                    generateExample.textContent =
+                        "Generate example";
+
+                }, 1800);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            `
+            .connection-card,
+            .workflow-card,
+            .factor,
+            .allocation-grid article,
+            .ai-card,
+            .language-card,
+            .global-stat,
+            .quality-card
+            `
+        );
+
+
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "revealed"
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SMOOTH ANCHOR SCROLL
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const targetId =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        targetId === "#"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+
+                        return;
+
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       OFFLINE PACKAGE BUTTON VISUAL
+    ===================================================== */
+
+    const offlinePackage =
+        document.querySelector(
+            ".offline-package"
+        );
+
+
+    if (offlinePackage) {
+
+        offlinePackage.addEventListener(
+            "click",
+            () => {
+
+                const progress =
+                    offlinePackage.querySelector(
+                        ".download-progress div"
+                    );
+
+
+                if (!progress) {
+
+                    return;
+
+                }
+
+
+                progress.style.width =
+                    "100%";
+
+
+                setTimeout(() => {
+
+                    progress.style.width =
+                        "82%";
+
+                }, 1500);
+
+            }
+        );
+
+    }
+
 
 });
