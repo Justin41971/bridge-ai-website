@@ -1,62 +1,134 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+  /* =========================================================
+     TABS
+  ========================================================= */
 
-        link.addEventListener("click", function (event) {
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".tab-panel");
 
-            const targetID = this.getAttribute("href");
+  tabs.forEach(tab => {
 
-            if (targetID === "#") {
-                return;
-            }
+    tab.addEventListener("click", () => {
 
-            const target = document.querySelector(targetID);
+      const target = tab.dataset.tab;
 
-            if (target) {
-                event.preventDefault();
+      tabs.forEach(item => {
+        item.classList.toggle("active", item === tab);
+      });
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-
-        });
+      panels.forEach(panel => {
+        panel.classList.toggle(
+          "active",
+          panel.id === target
+        );
+      });
 
     });
 
-});
+  });
 
 
-// Student matching demo
-function findMatch() {
+  /* =========================================================
+     STUDENT SESSION LENGTH
+  ========================================================= */
 
-    const button = document.querySelector(".match-button");
-    const message = document.querySelector("#match-message");
+  document.querySelectorAll(".duration-row").forEach(row => {
 
-    if (!button || !message) {
-        return;
-    }
+    row.querySelectorAll("button").forEach(button => {
 
-    button.disabled = true;
-    button.textContent = "Finding a match...";
+      button.addEventListener("click", () => {
 
-    message.textContent = "";
+        row.querySelectorAll("button").forEach(item => {
+          item.classList.remove("selected");
+        });
 
-    setTimeout(function () {
+        button.classList.add("selected");
 
-        button.textContent = "Tutor Found ✓";
-        message.textContent =
-            "Bridge found a 96% match based on topic, ability and availability.";
+      });
 
-    }, 1000);
+    });
 
-    setTimeout(function () {
+  });
 
+
+  /* =========================================================
+     FIND MATCH DEMO
+  ========================================================= */
+
+  document.querySelectorAll(".find-button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const original = button.textContent;
+
+      button.disabled = true;
+      button.textContent = "Finding best match...";
+
+      setTimeout(() => {
+
+        button.textContent = "96% match found ✓";
+        button.classList.add("success");
+
+      }, 900);
+
+      setTimeout(() => {
+
+        button.textContent = original;
         button.disabled = false;
-        button.textContent = "Find a Tutor →";
+        button.classList.remove("success");
 
-    }, 3500);
+      }, 2400);
 
-}
+    });
+
+  });
+
+
+  /* =========================================================
+     SCROLL REVEALS
+  ========================================================= */
+
+  if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("revealed");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.08
+      }
+    );
+
+
+    document
+      .querySelectorAll(
+        ".workflow-card, " +
+        ".ai-card, " +
+        ".student-request, " +
+        ".africa-stat, " +
+        ".offline-steps > div, " +
+        ".matching-card, " +
+        ".loop-step"
+      )
+      .forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+  }
+
+});

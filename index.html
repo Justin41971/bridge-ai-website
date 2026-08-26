@@ -1,803 +1,1802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridge AI — Education Without Barriers</title>
 
-    <title>Bridge AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="nav">
-        <a href="#home" class="logo">Bridge <span>AI</span></a>
+<header class="navbar">
+  <div class="nav-container">
 
-        <nav>
-            <a href="#problem">The Problem</a>
-            <a href="#platform">Platform</a>
-            <a href="#ai">AI</a>
-            <a href="#offline">Offline Learning</a>
-            <a href="#africa">Global Access</a>
-        </nav>
+    <a class="logo" href="#top">
+      <span class="logo-mark">B</span>
+      Bridge<span class="logo-ai">AI</span>
+    </a>
 
-        <a href="tutor.html" class="tutor-button">Become a Tutor</a>
-    </div>
+    <nav class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#connection">Connection</a>
+      <a href="#matching">Matching</a>
+      <a href="#ai">AI</a>
+      <a href="#offline">Offline</a>
+    </nav>
+
+    <a class="nav-button" href="tutor.html">
+      Become a tutor →
+    </a>
+
+  </div>
 </header>
 
 
-<main>
+<main id="top">
 
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-<section class="hero" id="home">
+<section class="hero">
 
-    <div class="hero-text">
-        <p class="label">EDUCATION • ACCESS • CONNECTION</p>
+  <div class="hero-glow"></div>
 
-        <h1>
-            Education should not
-            depend on <span>income.</span>
-        </h1>
+  <div class="section-container hero-inner">
 
-        <p>
-            Bridge AI connects students who need academic help
-            with students who can provide it.
-        </p>
+    <div class="hero-copy">
 
-        <div class="hero-buttons">
-            <a href="#platform" class="primary-button">Explore Bridge</a>
-            <a href="tutor.html" class="secondary-button">Become a Tutor</a>
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        EDUCATION WITHOUT BARRIERS
+      </div>
+
+      <h1>
+        The bridge between
+        <span>students and opportunity.</span>
+      </h1>
+
+      <p>
+        Bridge connects students who need academic help with student tutors,
+        then uses AI to make the lesson easier to prepare, understand and
+        continue after the session.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="button button-primary" href="#connection">
+          See how Bridge works →
+        </a>
+
+        <a class="button button-secondary" href="tutor.html">
+          Become a tutor
+        </a>
+      </div>
+
+      <div class="hero-points">
+        <div>
+          <strong>Match</strong>
+          <span>Need + skill + availability</span>
         </div>
+
+        <div>
+          <strong>Teach</strong>
+          <span>Human tutor + AI assistance</span>
+        </div>
+
+        <div>
+          <strong>Continue</strong>
+          <span>Resources after the lesson</span>
+        </div>
+      </div>
+
     </div>
 
-    <div class="student-interface">
 
-        <div class="interface-top">
-            <span>BRIDGE</span>
-            <span>Student</span>
-        </div>
+    <!-- Student interface visual -->
 
-        <div class="student-content">
+    <div class="hero-visual app-window">
 
-            <div class="student-title">
-                <small>WHAT DO YOU NEED HELP WITH?</small>
-                <h3>Find a tutor</h3>
+      <div class="window-header">
+        <span class="window-dots">
+          <i></i><i></i><i></i>
+        </span>
+
+        <span>Bridge Student</span>
+
+        <span>●</span>
+      </div>
+
+      <div class="mock-app">
+
+        <aside class="mock-sidebar">
+
+          <div class="side-logo">B</div>
+
+          <div class="side-item active">⌂ Home</div>
+          <div class="side-item">◎ Find help</div>
+          <div class="side-item">□ Sessions</div>
+          <div class="side-item">◫ Resources</div>
+
+        </aside>
+
+
+        <div class="mock-main">
+
+          <div class="mock-top">
+
+            <div>
+              <small>WHAT DO YOU NEED HELP WITH?</small>
+              <h3>Find academic help</h3>
             </div>
 
-            <div class="request-box">
-                <span>SUBJECT</span>
-                <strong>Physics</strong>
+            <div class="avatar">JM</div>
+
+          </div>
+
+
+          <div class="mock-request">
+
+            <span class="mock-icon">?</span>
+
+            <div>
+              <small>MICROTOPIC</small>
+
+              <strong>Quadratic factoring</strong>
+
+              <p>
+                I understand expanding, but I don't know how to factor.
+              </p>
             </div>
 
-            <div class="request-box">
-                <span>TOPIC</span>
-                <strong>Kinematics</strong>
-            </div>
-
-            <div class="request-box">
-                <span>WHEN?</span>
-                <strong>Today · 4:00 PM</strong>
-            </div>
-
-            <button class="match-button" onclick="findMatch()">
-                Find a Tutor →
+            <button>
+              Find a tutor →
             </button>
 
-            <div id="match-message"></div>
+          </div>
+
+
+          <div class="mock-mini-grid">
+
+            <div>
+              <small>STUDY TIME</small>
+              <strong>60 min</strong>
+              <span>Today · 4–6 PM</span>
+            </div>
+
+            <div>
+              <small>BEST MATCH</small>
+              <strong>96%</strong>
+              <span>Topic + time fit</span>
+            </div>
+
+          </div>
 
         </div>
+
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
 
-<!-- PROBLEM -->
+<!-- =========================================================
+     PROBLEM
+========================================================= -->
 
-<section class="section" id="problem">
+<section class="section problem" id="problem">
 
-    <div class="section-heading">
-        <p class="label">THE PROBLEM</p>
+  <div class="section-container">
 
-        <h2>
-            Students do not have
-            <span>equal access</span> to education.
-        </h2>
+    <div class="section-label">
+      01 / THE PROBLEM
     </div>
 
-    <div class="problem-layout">
+    <div class="two-column problem-top">
 
-        <div class="problem-copy">
+      <h2>
+        Educational opportunity should not depend on
+        <span>income.</span>
+      </h2>
 
-            <p>
-                Students from low-income communities may not have
-                access to private tutors, academic mentors, paid
-                worksheets or reliable technology.
-            </p>
-
-            <p>
-                Even students who want to help others often have
-                no simple way to find people who need help.
-            </p>
-
-            <p>
-                Scheduling can also be difficult because every
-                student has different availability.
-            </p>
-
-        </div>
-
-        <div class="problem-stat">
-
-            <strong>77–87%</strong>
-
-            <p>
-                of low-income students do not have access to
-                private tutoring in Ontario.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="barriers">
-
-        <div>
-            <strong>$$$$</strong>
-            <span>Private tutoring can be expensive.</span>
-        </div>
-
-        <div>
-            <strong>Wi-Fi</strong>
-            <span>Some students have unreliable internet access.</span>
-        </div>
-
-        <div>
-            <strong>Language</strong>
-            <span>Students may struggle with language barriers.</span>
-        </div>
-
-        <div>
-            <strong>TIME</strong>
-            <span>Finding a compatible tutoring time is difficult.</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PLATFORM -->
-
-<section class="section platform" id="platform">
-
-    <div class="section-heading">
-        <p class="label">THE BRIDGE PLATFORM</p>
-
-        <h2>
-            Two students.
-            <span>One connection.</span>
-        </h2>
+      <div class="body-copy">
 
         <p>
-            Bridge has two simple interfaces: one for students
-            looking for help and one for students who want to tutor.
+          Private tutoring can be expensive, school support can be limited,
+          and finding someone who can help at the right time is difficult.
         </p>
-    </div>
-
-
-    <div class="interfaces">
-
-        <!-- STUDENT -->
-
-        <div class="interface-card">
-
-            <div class="card-header">
-                <span>STUDENT INTERFACE</span>
-                <b>Find Help</b>
-            </div>
-
-            <div class="student-ui">
-
-                <div class="ui-heading">
-                    <small>YOUR REQUEST</small>
-                    <h3>I need help with...</h3>
-                </div>
-
-                <div class="ui-input">
-                    <span>SUBJECT</span>
-                    <b>Biology</b>
-                </div>
-
-                <div class="ui-input">
-                    <span>MICROTOPIC</span>
-                    <b>Genetics</b>
-                </div>
-
-                <div class="ui-input">
-                    <span>GRADE</span>
-                    <b>Grade 10</b>
-                </div>
-
-                <div class="ui-input">
-                    <span>AVAILABILITY</span>
-                    <b>Monday · 5:00 PM</b>
-                </div>
-
-                <button>Find Matching Tutors</button>
-
-            </div>
-
-        </div>
-
-
-        <!-- TUTOR -->
-
-        <div class="interface-card">
-
-            <div class="card-header">
-                <span>TUTOR INTERFACE</span>
-                <b>Suggestions</b>
-            </div>
-
-            <div class="tutor-ui">
-
-                <div class="ui-heading">
-                    <small>MATCHED STUDENTS</small>
-                    <h3>Students you can help</h3>
-                </div>
-
-
-                <div class="student-request">
-
-                    <div class="person">
-                        <div class="avatar">J</div>
-
-                        <div>
-                            <strong>Jordan</strong>
-                            <span>Grade 10 · Physics</span>
-                        </div>
-                    </div>
-
-                    <div class="request-topic">
-                        <b>Kinematics</b>
-                        <span>Needs help with acceleration</span>
-                    </div>
-
-                    <div class="request-bottom">
-                        <span>Today · 4:00 PM</span>
-                        <strong>96% match</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="student-request">
-
-                    <div class="person">
-                        <div class="avatar purple">A</div>
-
-                        <div>
-                            <strong>Alex</strong>
-                            <span>Grade 10 · Biology</span>
-                        </div>
-                    </div>
-
-                    <div class="request-topic">
-                        <b>Genetics</b>
-                        <span>Needs help understanding Punnett squares</span>
-                    </div>
-
-                    <div class="request-bottom">
-                        <span>Tomorrow · 5:00 PM</span>
-                        <strong>91% match</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- MATCHING -->
-
-<section class="section matching-section">
-
-    <div class="section-heading">
-        <p class="label">MATCHING</p>
-
-        <h2>
-            Bridge matches people based on
-            <span>actual needs.</span>
-        </h2>
-    </div>
-
-    <div class="matching-visual">
-
-        <div class="match-person">
-
-            <div class="big-avatar">J</div>
-
-            <h3>Student</h3>
-
-            <p>Needs help with:</p>
-
-            <strong>Kinematics</strong>
-
-            <small>Grade 10 · Physics</small>
-
-        </div>
-
-
-        <div class="matching-line">
-
-            <div class="line"></div>
-
-            <div class="match-circle">
-                96%
-            </div>
-
-            <div class="line"></div>
-
-        </div>
-
-
-        <div class="match-person">
-
-            <div class="big-avatar tutor-avatar">A</div>
-
-            <h3>Tutor</h3>
-
-            <p>Can teach:</p>
-
-            <strong>Physics</strong>
-
-            <small>Grade 10–12 · Available 4–6 PM</small>
-
-        </div>
-
-    </div>
-
-
-    <div class="matching-factors">
-
-        <div>
-            <strong>Subject</strong>
-            <span>Does the tutor understand the topic?</span>
-        </div>
-
-        <div>
-            <strong>Ability</strong>
-            <span>How well can the tutor teach?</span>
-        </div>
-
-        <div>
-            <strong>Need</strong>
-            <span>How much support does the student need?</span>
-        </div>
-
-        <div>
-            <strong>Availability</strong>
-            <span>Do their schedules overlap?</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- AI -->
-
-<section class="section ai-section" id="ai">
-
-    <div class="section-heading">
-
-        <p class="label">BRIDGE AI</p>
-
-        <h2>
-            AI helps the tutor teach.
-            <span>It does not replace them.</span>
-        </h2>
 
         <p>
-            Bridge AI works in the background before, during and after
-            the tutoring session.
+          Bridge is designed for students who have fewer educational
+          opportunities and students who have the knowledge and time to help.
         </p>
 
-    </div>
-
-
-    <div class="ai-workflow">
-
-        <div class="ai-step">
-
-            <div class="step-number">01</div>
-
-            <h3>Before the lesson</h3>
-
-            <p>
-                AI creates lesson ideas, examples and practice questions
-                based on the student's exact topic.
-            </p>
-
-            <div class="ai-screen">
-                <small>AI LESSON PLAN</small>
-
-                <strong>Topic: Kinematics</strong>
-
-                <span>1. Explain velocity</span>
-                <span>2. Simple example</span>
-                <span>3. Practice problem</span>
-            </div>
-
-        </div>
-
-
-        <div class="ai-step">
-
-            <div class="step-number">02</div>
-
-            <h3>During the lesson</h3>
-
-            <p>
-                The tutor teaches while Bridge AI can generate visuals,
-                questions, translations and explanations.
-            </p>
-
-            <div class="ai-screen">
-
-                <small>AI ASSISTANCE</small>
-
-                <strong>Try a simpler example.</strong>
-
-                <div class="graph">
-                    <div class="graph-line"></div>
-                </div>
-
-                <span>Generate visual →</span>
-
-            </div>
-
-        </div>
-
-
-        <div class="ai-step">
-
-            <div class="step-number">03</div>
-
-            <h3>After the lesson</h3>
-
-            <p>
-                Bridge creates follow-up material and checks whether
-                the student can explain the topic independently.
-            </p>
-
-            <div class="ai-screen">
-
-                <small>CONTINUE LEARNING</small>
-
-                <strong>Can you explain this yourself?</strong>
-
-                <div class="progress">
-                    <div></div>
-                </div>
-
-                <span>Follow-up diagnostic</span>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+
+    <div class="stat-row">
+
+      <div>
+        <strong>77–87%</strong>
+        <span>
+          Project research states that this percentage of low-income
+          students in Ontario do not have access to private tutoring.
+        </span>
+      </div>
+
+      <div>
+        <strong>11%</strong>
+        <span>
+          The project identifies limited access to reliable Wi-Fi
+          as an additional barrier for Canadian households.
+        </span>
+      </div>
+
+      <div>
+        <strong>60%+</strong>
+        <span>
+          The project highlights especially severe online-access
+          barriers in some Indigenous communities.
+        </span>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- DELTA GROWTH -->
+<!-- =========================================================
+     CONNECTION
+========================================================= -->
 
-<section class="section growth">
+<section class="section connection" id="connection">
 
-    <div class="growth-content">
+  <div class="section-container">
 
-        <div>
+    <div class="section-header">
 
-            <p class="label">DELTA GROWTH</p>
+      <div class="section-label">
+        02 / CONNECTION
+      </div>
 
-            <h2>
-                The session does not end
-                when the meeting ends.
-            </h2>
+      <h2>
+        Bridge connects the
+        <span>right students.</span>
+      </h2>
 
-            <p>
-                Bridge compares understanding before and after a session
-                to measure actual educational growth.
-            </p>
-
-        </div>
-
-
-        <div class="growth-visual">
-
-            <div class="growth-before">
-                <span>BEFORE</span>
-                <strong>42%</strong>
-                <small>Understanding</small>
-            </div>
-
-            <div class="growth-arrow">→</div>
-
-            <div class="growth-after">
-                <span>AFTER</span>
-                <strong>78%</strong>
-                <small>Understanding</small>
-            </div>
-
-            <div class="growth-result">
-                +36% DELTA GROWTH
-            </div>
-
-        </div>
+      <p>
+        Students describe exactly what they need. Tutors describe what
+        they can teach. Bridge uses those details to create a useful match.
+      </p>
 
     </div>
+
+
+    <div class="connection-visual">
+
+      <!-- USER SIDE -->
+
+      <div class="connection-interface">
+
+        <div class="interface-title">
+          <span>STUDENT INTERFACE</span>
+          <small>Looking for help</small>
+        </div>
+
+        <div class="profile-top">
+          <div class="profile-avatar">JL</div>
+
+          <div>
+            <strong>Jordan</strong>
+            <span>Grade 10 · Physics</span>
+          </div>
+        </div>
+
+
+        <div class="need-box">
+
+          <small>MICROTOPIC</small>
+
+          <strong>Kinematics</strong>
+
+          <p>
+            I understand velocity but I don't understand
+            how to solve acceleration problems.
+          </p>
+
+        </div>
+
+
+        <div class="interface-row">
+
+          <div>
+            <small>WHEN</small>
+            <strong>Tue · 4–6 PM</strong>
+          </div>
+
+          <div>
+            <small>SESSION</small>
+            <strong>60 minutes</strong>
+          </div>
+
+        </div>
+
+
+        <div class="match-request">
+          <span>Bridge AI</span>
+          <strong>Finding tutors who match this need...</strong>
+        </div>
+
+      </div>
+
+
+      <div class="connection-arrow">
+        →
+      </div>
+
+
+      <!-- TUTOR SIDE -->
+
+      <div class="connection-interface tutor-dashboard">
+
+        <div class="interface-title">
+          <span>TUTOR INTERFACE</span>
+          <small>Suggested students</small>
+        </div>
+
+
+        <div class="tutor-request">
+
+          <div class="profile-avatar blue">
+            JL
+          </div>
+
+          <div class="request-content">
+            <strong>Jordan L.</strong>
+            <span>Physics · Kinematics</span>
+            <small>Tue · 4–5 PM</small>
+          </div>
+
+          <b>96%</b>
+
+        </div>
+
+
+        <div class="tutor-request">
+
+          <div class="profile-avatar green">
+            MK
+          </div>
+
+          <div class="request-content">
+            <strong>Maya K.</strong>
+            <span>Chemistry · Stoichiometry</span>
+            <small>Tue · 5–6 PM</small>
+          </div>
+
+          <b>91%</b>
+
+        </div>
+
+
+        <div class="tutor-request">
+
+          <div class="profile-avatar orange">
+            AT
+          </div>
+
+          <div class="request-content">
+            <strong>Andrew T.</strong>
+            <span>Math · Derivatives</span>
+            <small>Wed · 4:30–5:30 PM</small>
+          </div>
+
+          <b>84%</b>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="connection-points">
+
+      <div>
+        <strong>Student need</strong>
+        <p>
+          Grade, average, school board funding, microtopic,
+          preferred time and desired session length.
+        </p>
+      </div>
+
+      <div>
+        <strong>Tutor ability</strong>
+        <p>
+          Academic average, subjects, extracurriculars,
+          teaching assessment and availability.
+        </p>
+      </div>
+
+      <div>
+        <strong>Availability</strong>
+        <p>
+          Tutors set their available days, daily limit and
+          weekly maximum. Students choose when and how long
+          they want to study.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- OFFLINE -->
+<!-- =========================================================
+     MATCHING
+========================================================= -->
 
-<section class="section offline" id="offline">
+<section class="section matching" id="matching">
 
-    <div class="section-heading">
+  <div class="section-container">
 
-        <p class="label">OFFLINE LEARNING</p>
+    <div class="section-header center">
 
-        <h2>
-            Learning should continue
-            <span>without reliable Wi-Fi.</span>
-        </h2>
+      <div class="section-label">
+        03 / MATCHING
+      </div>
+
+      <h2>
+        Matching is based on
+        <span>need, ability and time.</span>
+      </h2>
+
+      <p>
+        Bridge does not simply use first-come, first-served tutoring.
+        The system considers who needs the most support and which tutor
+        is best suited to provide it.
+      </p>
+
+    </div>
+
+
+    <div class="matching-grid">
+
+      <div class="matching-card">
+
+        <span class="matching-number">01</span>
+
+        <h3>Student need score</h3>
 
         <p>
-            A tutoring session should not become useless when a student
-            leaves the library, school or Wi-Fi connection.
+          Bridge evaluates the amount of help a student needs.
         </p>
+
+        <div class="score-list">
+
+          <div>
+            <span>Student average</span>
+            <b>×</b>
+          </div>
+
+          <div>
+            <span>School board funding difference</span>
+            <b>×</b>
+          </div>
+
+          <div>
+            <span>Required tutoring time</span>
+            <b>×</b>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="matching-card dark">
+
+        <span class="matching-number">02</span>
+
+        <h3>Tutor quality</h3>
+
+        <p>
+          Tutor quality is evaluated using multiple factors rather
+          than academic grades alone.
+        </p>
+
+        <div class="quality-bars">
+
+          <div>
+            <span>Academic performance</span>
+            <i><b style="width:88%"></b></i>
+          </div>
+
+          <div>
+            <span>Teaching assessment</span>
+            <i><b style="width:94%"></b></i>
+          </div>
+
+          <div>
+            <span>Relevant experience</span>
+            <i><b style="width:82%"></b></i>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="matching-card">
+
+        <span class="matching-number">03</span>
+
+        <h3>Schedule matching</h3>
+
+        <p>
+          Bridge considers both sides of the schedule.
+        </p>
+
+        <div class="schedule-visual">
+
+          <div>
+            <small>TUTOR</small>
+            <span>Tue 4–6 PM</span>
+            <span>60 min/day</span>
+            <span>180 min/week</span>
+          </div>
+
+          <div class="schedule-line">
+            →
+          </div>
+
+          <div>
+            <small>STUDENT</small>
+            <span>Tue 4–5 PM</span>
+            <span>60 minute session</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="algorithm-box">
+
+      <div>
+
+        <span class="section-label">
+          MIXING & MATCHING
+        </span>
+
+        <h3>
+          Best match → available time → next best match
+        </h3>
+
+        <p>
+          The system gives the strongest available match priority.
+          Once that tutor's available time is filled, remaining
+          students are considered for the next suitable tutor.
+        </p>
+
+      </div>
+
+
+      <div class="algorithm-flow">
+
+        <div>
+          <b>Student</b>
+          <span>Need score</span>
+        </div>
+
+        <i>→</i>
+
+        <div>
+          <b>Tutor</b>
+          <span>Quality score</span>
+        </div>
+
+        <i>→</i>
+
+        <div>
+          <b>Schedule</b>
+          <span>Available minutes</span>
+        </div>
+
+        <i>→</i>
+
+        <div class="algorithm-result">
+          <b>Match</b>
+          <span>Highest fit</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRODUCT TABS
+========================================================= -->
+
+<section class="section product">
+
+  <div class="section-container">
+
+    <div class="section-header center">
+
+      <div class="section-label">
+        04 / BRIDGE PRODUCT
+      </div>
+
+      <h2>
+        What happens
+        <span>inside Bridge.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="tabs">
+
+      <button class="tab active" data-tab="student">
+        Student
+      </button>
+
+      <button class="tab" data-tab="tutor">
+        Tutor
+      </button>
+
+      <button class="tab" data-tab="session">
+        Session
+      </button>
+
+      <button class="tab" data-tab="resources">
+        Resources
+      </button>
+
+    </div>
+
+
+    <!-- STUDENT TAB -->
+
+    <div class="tab-panel active" id="student">
+
+      <div class="panel-copy">
+
+        <span class="panel-number">01</span>
+
+        <h3>
+          Students request help for the exact thing they don't understand.
+        </h3>
+
+        <p>
+          A student does not need to commit to a tutor every week.
+          They can request help for one specific subject or microtopic.
+        </p>
+
+        <ul>
+          <li>Subject / microtopic</li>
+          <li>Grade or course</li>
+          <li>When they are available</li>
+          <li>How long they want to study</li>
+          <li>Language and learning needs</li>
+        </ul>
+
+      </div>
+
+
+      <div class="interface-card student-ui">
+
+        <div class="ui-header">
+          <span>New help request</span>
+          <small>STEP 1 / 3</small>
+        </div>
+
+        <label>What are you struggling with?</label>
+
+        <div class="fake-input">
+          I understand Newton's laws, but I struggle with
+          elevator problems.
+        </div>
+
+
+        <label>How long do you want to study?</label>
+
+        <div class="duration-row">
+
+          <button>30 min</button>
+          <button class="selected">60 min</button>
+          <button>90 min</button>
+
+        </div>
+
+
+        <label>Preferred time</label>
+
+        <div class="fake-input">
+          Today · 4:00–6:00 PM
+        </div>
+
+
+        <label>Language</label>
+
+        <div class="fake-input">
+          English
+        </div>
+
+
+        <button class="ui-button find-button">
+          Find my best match →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- TUTOR TAB -->
+
+    <div class="tab-panel" id="tutor">
+
+      <div class="panel-copy">
+
+        <span class="panel-number">02</span>
+
+        <h3>
+          Tutors see students who need their specific skills.
+        </h3>
+
+        <p>
+          Instead of searching through every student, tutors receive
+          suggested students based on their subjects, quality,
+          availability and schedule limits.
+        </p>
+
+        <ul>
+          <li>Specific microtopic</li>
+          <li>Match score</li>
+          <li>Available time</li>
+          <li>Student need</li>
+          <li>Weekly tutoring limit</li>
+        </ul>
+
+      </div>
+
+
+      <div class="interface-card tutor-ui">
+
+        <div class="ui-header">
+          <span>Recommended students</span>
+          <small>TODAY</small>
+        </div>
+
+
+        <div class="student-request revealed">
+
+          <div class="request-avatar">
+            JL
+          </div>
+
+          <div>
+            <strong>Jordan L.</strong>
+            <span>Physics · Kinematics</span>
+            <small>Tue 4:00–5:00</small>
+          </div>
+
+          <b>96%</b>
+
+        </div>
+
+
+        <div class="student-request revealed">
+
+          <div class="request-avatar green">
+            MK
+          </div>
+
+          <div>
+            <strong>Maya K.</strong>
+            <span>Chemistry · Stoichiometry</span>
+            <small>Tue 5:00–6:00</small>
+          </div>
+
+          <b>91%</b>
+
+        </div>
+
+
+        <div class="student-request revealed">
+
+          <div class="request-avatar orange">
+            AT
+          </div>
+
+          <div>
+            <strong>Andrew T.</strong>
+            <span>Math · Derivatives</span>
+            <small>Wed 4:30–5:30</small>
+          </div>
+
+          <b>84%</b>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SESSION TAB -->
+
+    <div class="tab-panel" id="session">
+
+      <div class="panel-copy">
+
+        <span class="panel-number">03</span>
+
+        <h3>
+          AI works alongside the tutor during the lesson.
+        </h3>
+
+        <p>
+          Bridge AI is a teaching assistant rather than the teacher.
+          The tutor remains responsible for teaching the student.
+        </p>
+
+        <ul>
+          <li>Generate visuals</li>
+          <li>Create practice questions</li>
+          <li>Suggest explanations</li>
+          <li>Translate material</li>
+          <li>Adapt material to the student's level</li>
+        </ul>
+
+      </div>
+
+
+      <div class="lesson-visual">
+
+        <div class="lesson-header">
+          <span>BRIDGE SESSION</span>
+          <small>AI ASSISTING</small>
+        </div>
+
+
+        <div class="whiteboard">
+
+          <div class="equation">
+            F = ma
+          </div>
+
+          <div class="visual-arrow">
+            ↓
+          </div>
+
+          <div class="visual-box">
+            <strong>AI suggestion</strong>
+            <span>
+              Try a real-world elevator example.
+            </span>
+          </div>
+
+          <div class="visual-box">
+            <strong>Practice</strong>
+            <span>
+              Generate a question at the student's level.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESOURCES TAB -->
+
+    <div class="tab-panel" id="resources">
+
+      <div class="panel-copy">
+
+        <span class="panel-number">04</span>
+
+        <h3>
+          The lesson continues after the tutor leaves.
+        </h3>
+
+        <p>
+          Bridge creates follow-up material based on what the student
+          still needs to understand.
+        </p>
+
+        <ul>
+          <li>Summaries</li>
+          <li>Practice questions</li>
+          <li>Flashcards</li>
+          <li>Fill-in notes</li>
+          <li>Diagnostic quiz</li>
+        </ul>
+
+      </div>
+
+
+      <div class="interface-card resource-ui">
+
+        <div class="ui-header">
+          <span>Lesson resources</span>
+          <small>KINEMATICS</small>
+        </div>
+
+
+        <div class="file-row">
+          <span class="file-icon">PDF</span>
+
+          <div>
+            <strong>Lesson summary</strong>
+            <small>Downloadable explanation</small>
+          </div>
+
+          <b>↓</b>
+        </div>
+
+
+        <div class="file-row">
+          <span class="file-icon">Q</span>
+
+          <div>
+            <strong>Practice questions</strong>
+            <small>10 questions + checking</small>
+          </div>
+
+          <b>→</b>
+        </div>
+
+
+        <div class="file-row">
+          <span class="file-icon">★</span>
+
+          <div>
+            <strong>Flashcards</strong>
+            <small>Important terms and steps</small>
+          </div>
+
+          <b>→</b>
+        </div>
+
+
+        <div class="file-row">
+          <span class="file-icon">✓</span>
+
+          <div>
+            <strong>Diagnostic</strong>
+            <small>Check understanding after the lesson</small>
+          </div>
+
+          <b>→</b>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     AI WORKFLOW
+========================================================= -->
+
+<section class="section ai" id="ai">
+
+  <div class="section-container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        05 / BRIDGE AI
+      </div>
+
+      <h2>
+        AI supports the entire
+        <span>learning process.</span>
+      </h2>
+
+      <p>
+        Bridge AI follows the student from the initial problem to
+        the follow-up check.
+      </p>
+
+    </div>
+
+
+    <div class="ai-flow">
+
+      <article class="ai-card">
+
+        <span>01 / BEFORE</span>
+
+        <div class="ai-icon">
+          01
+        </div>
+
+        <h3>Assess & prepare</h3>
+
+        <p>
+          The student submits a microtopic. AI assesses the problem
+          and helps the tutor create an appropriate lesson.
+        </p>
+
+        <div class="ai-mini">
+          <b>Student issue</b>
+          <span>→</span>
+          <b>Lesson</b>
+        </div>
+
+      </article>
+
+
+      <div class="flow-arrow">→</div>
+
+
+      <article class="ai-card">
+
+        <span>02 / DURING</span>
+
+        <div class="ai-icon">
+          02
+        </div>
+
+        <h3>Assist</h3>
+
+        <p>
+          AI works in the background to create visuals, questions,
+          translations and suggestions for the tutor.
+        </p>
+
+        <div class="ai-mini">
+          <b>Tutor teaches</b>
+          <span>+</span>
+          <b>AI assists</b>
+        </div>
+
+      </article>
+
+
+      <div class="flow-arrow">→</div>
+
+
+      <article class="ai-card">
+
+        <span>03 / AFTER</span>
+
+        <div class="ai-icon">
+          03
+        </div>
+
+        <h3>Check & continue</h3>
+
+        <p>
+          AI creates follow-up practice and a diagnostic check to
+          see whether the student can explain the concept independently.
+        </p>
+
+        <div class="ai-mini">
+          <b>Lesson</b>
+          <span>→</span>
+          <b>Next action</b>
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div class="growth-card">
+
+      <div>
+
+        <span>DELTA GROWTH</span>
+
+        <h3>
+          The session doesn't end when the meeting turns off.
+          It ends when the student understands.
+        </h3>
+
+      </div>
+
+
+      <div class="growth-visual">
+
+        <div>
+          <small>BEFORE</small>
+          <strong>42%</strong>
+        </div>
+
+        <i></i>
+
+        <div>
+          <small>AFTER</small>
+          <strong>81%</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     TUTOR QUALITY
+========================================================= -->
+
+<section class="section tutor-quality">
+
+  <div class="section-container">
+
+    <div class="two-column">
+
+      <div>
+
+        <div class="section-label">
+          06 / TUTOR QUALITY
+        </div>
+
+        <h2>
+          Tutors need to
+          <span>know how to teach.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="body-copy">
+
+        <p>
+          Bridge does not allow anyone to automatically become a tutor.
+          During registration, tutors complete a teaching simulation.
+        </p>
+
+        <p>
+          The AI acts as a student and evaluates the tutor's teaching
+          approach using a structured assessment.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="quality-visual">
+
+      <div class="simulation-side">
+
+        <span>AI STUDENT</span>
+
+        <div class="speech-bubble">
+          I know acceleration means something changes,
+          but I don't understand why the same force can
+          cause different acceleration.
+        </div>
+
+      </div>
+
+
+      <div class="quality-arrow">
+        →
+      </div>
+
+
+      <div class="evaluation-side">
+
+        <span>TEACHING ASSESSMENT</span>
+
+        <div class="evaluation-row">
+          <label>Knowledge accuracy</label>
+          <b>94</b>
+          <i><em style="width:94%"></em></i>
+        </div>
+
+        <div class="evaluation-row">
+          <label>Clarity</label>
+          <b>89</b>
+          <i><em style="width:89%"></em></i>
+        </div>
+
+        <div class="evaluation-row">
+          <label>Pacing</label>
+          <b>86</b>
+          <i><em style="width:86%"></em></i>
+        </div>
+
+        <div class="evaluation-row">
+          <label>Adaptation</label>
+          <b>92</b>
+          <i><em style="width:92%"></em></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     OFFLINE
+========================================================= -->
+
+<section class="section access" id="offline">
+
+  <div class="section-container">
+
+    <div class="two-column access-top">
+
+      <div>
+
+        <div class="section-label">
+          07 / OFFLINE LEARNING
+        </div>
+
+        <h2>
+          Learning can continue when
+          <span>Wi-Fi cannot.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="body-copy">
+
+        <p>
+          Students who only have reliable internet at school, a library
+          or another location can download their learning material.
+        </p>
+
+        <p>
+          Bridge reduces the resource barrier caused by unreliable
+          internet rather than pretending to solve the connectivity problem.
+        </p>
+
+      </div>
 
     </div>
 
 
     <div class="offline-layout">
 
+      <div class="phone-visual">
+
         <div class="phone">
 
-            <div class="phone-top">BRIDGE AI</div>
+          <div class="phone-screen">
 
-            <div class="phone-content">
+            <div class="phone-notch"></div>
 
-                <small>DOWNLOAD LESSON</small>
+            <small>BRIDGE OFFLINE PACK</small>
 
-                <h3>Kinematics</h3>
+            <h4>Kinematics</h4>
 
-                <div class="download-item">
-                    <span>Lesson summary</span>
-                    <b>✓</b>
-                </div>
-
-                <div class="download-item">
-                    <span>Examples</span>
-                    <b>✓</b>
-                </div>
-
-                <div class="download-item">
-                    <span>Practice questions</span>
-                    <b>✓</b>
-                </div>
-
-                <div class="download-item">
-                    <span>Diagnostic quiz</span>
-                    <b>✓</b>
-                </div>
-
-                <button>Available Offline</button>
-
+            <div class="download-icon">
+              ↓
             </div>
+
+            <strong>Ready offline</strong>
+
+            <span>
+              Lesson · examples · practice
+            </span>
+
+            <div class="offline-bar">
+              <i></i>
+            </div>
+
+            <small>
+              82% complete
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="offline-steps">
+
+        <div>
+
+          <span>01</span>
+
+          <div>
+            <strong>Download</strong>
+
+            <p>
+              Save a compact lesson package while connected.
+            </p>
+          </div>
 
         </div>
 
 
-        <div class="offline-copy">
+        <div>
 
-            <div>
-                <strong>01</strong>
-                <h3>Download</h3>
-                <p>
-                    Students download a lesson package while they
-                    have access to Wi-Fi.
-                </p>
-            </div>
+          <span>02</span>
 
-            <div>
-                <strong>02</strong>
-                <h3>Learn</h3>
-                <p>
-                    They can review explanations, examples,
-                    notes and practice questions offline.
-                </p>
-            </div>
+          <div>
+            <strong>Learn</strong>
 
-            <div>
-                <strong>03</strong>
-                <h3>Check</h3>
-                <p>
-                    A diagnostic can show what the student understands
-                    and what they should review next.
-                </p>
-            </div>
+            <p>
+              Read explanations and complete practice without live internet.
+            </p>
+          </div>
 
         </div>
+
+
+        <div>
+
+          <span>03</span>
+
+          <div>
+            <strong>Check</strong>
+
+            <p>
+              Complete an end-of-pack diagnostic.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <span>04</span>
+
+          <div>
+            <strong>Sync</strong>
+
+            <p>
+              Send results back to the tutor once connected again.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
 
-<!-- AFRICA -->
+<!-- =========================================================
+     AFRICA
+========================================================= -->
 
-<section class="section africa" id="africa">
+<section class="section africa">
 
-    <div class="section-heading">
+  <div class="section-container">
 
-        <p class="label">GLOBAL ACCESS</p>
+    <div class="section-header center">
 
-        <h2>
-            Bridge can help communities
-            <span>beyond Ontario.</span>
-        </h2>
+      <div class="section-label">
+        08 / GLOBAL ACCESS
+      </div>
 
-        <p>
-            The same resource barrier that affects students locally
-            can affect students around the world.
-        </p>
+      <h2>
+        Extending Bridge to
+        <span>low-income communities in Africa.</span>
+      </h2>
+
+      <p>
+        Bridge's offline approach can be used in communities where
+        reliable internet access is limited.
+      </p>
 
     </div>
 
 
     <div class="africa-layout">
 
-        <div class="map">
 
-            <svg viewBox="0 0 500 550" aria-label="Map of Africa">
+      <!-- MAP VISUAL -->
 
-                <path
-                    d="M247 28
-                    C215 35 184 49 161 75
-                    C139 100 125 130 114 160
-                    C103 191 94 219 101 250
-                    C107 278 119 296 123 327
-                    C127 360 145 391 166 420
-                    C183 444 193 480 216 508
-                    C231 526 250 518 258 496
-                    C270 463 292 447 314 425
-                    C335 404 355 374 363 344
-                    C370 318 389 294 402 268
-                    C416 240 420 208 406 181
-                    C392 153 370 134 351 113
-                    C328 88 312 54 285 38
-                    C272 30 259 26 247 28Z"
-                    class="africa-shape"
-                />
+      <div class="africa-map-card">
 
-                <circle cx="210" cy="180" r="7" class="map-dot"/>
-                <circle cx="278" cy="260" r="7" class="map-dot"/>
-                <circle cx="320" cy="360" r="7" class="map-dot"/>
-                <circle cx="180" cy="350" r="7" class="map-dot"/>
+        <div class="map-label">
+          AFRICA / LOW-BANDWIDTH LEARNING
+        </div>
 
-            </svg>
 
-            <div class="map-label label-1">Education access</div>
-            <div class="map-label label-2">Offline resources</div>
+        <svg
+          class="africa-map"
+          viewBox="0 0 500 560"
+          role="img"
+          aria-label="Stylized map of Africa"
+        >
+
+          <defs>
+
+            <linearGradient
+              id="africaFill"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+            >
+
+              <stop
+                offset="0"
+                stop-color="#246bfe"
+              />
+
+              <stop
+                offset="1"
+                stop-color="#6ec8ff"
+              />
+
+            </linearGradient>
+
+          </defs>
+
+
+          <path
+            fill="url(#africaFill)"
+            d="
+              M249 35
+              l39 19
+              20 36
+              35 17
+              9 37
+              29 24
+              11 38
+              35 25
+              -7 30
+              -31 6
+              -13 28
+              8 32
+              -18 20
+              -12 43
+              -27 20
+              -15 44
+              -31 45
+              -29 8
+              -13-32
+              -28-18
+              -22-34
+              -25-17
+              -12-40
+              -26-17
+              -3-38
+              -19-31
+              7-33
+              -16-30
+              15-27
+              35-17
+              18-31
+              33-9
+              16-31
+              29-8
+              8-30
+              z
+            "
+          />
+
+
+          <circle
+            cx="255"
+            cy="300"
+            r="8"
+            class="map-dot"
+          />
+
+          <circle
+            cx="315"
+            cy="360"
+            r="8"
+            class="map-dot"
+          />
+
+          <circle
+            cx="190"
+            cy="245"
+            r="8"
+            class="map-dot"
+          />
+
+
+          <text x="275" y="295">
+            Offline packs
+          </text>
+
+          <text x="330" y="355">
+            Translated material
+          </text>
+
+          <text x="115" y="238">
+            Low-bandwidth learning
+          </text>
+
+        </svg>
+
+      </div>
+
+
+      <div class="africa-copy">
+
+        <div class="africa-stat">
+
+          <strong>63%</strong>
+
+          <span>
+            The project identifies unreliable Wi-Fi as a major
+            barrier affecting a large portion of Africa.
+          </span>
 
         </div>
 
 
-        <div class="africa-copy">
+        <p>
+          Bridge can download learning packages while a connection
+          is available and allow students to continue learning later.
+        </p>
 
-            <div class="africa-stat">
-                <strong>63%</strong>
-                <span>
-                    of Africa's population has been described as
-                    lacking reliable internet access.
-                </span>
-            </div>
 
-            <p>
-                Bridge's offline learning system is designed around
-                the idea that an internet connection should not be
-                required for every part of learning.
-            </p>
+        <div class="africa-list">
 
-            <p>
-                Students can download lessons, explanations,
-                practice questions and diagnostic material and
-                continue learning later.
-            </p>
+          <div>
+            <b>Offline PDFs</b>
+            <span>
+              Summaries, examples and explanations.
+            </span>
+          </div>
 
-            <div class="africa-feature">
-                <span>BRIDGE</span>
-                <strong>Connect when you can. Learn whenever you can.</strong>
-            </div>
+          <div>
+            <b>Phone-usable material</b>
+            <span>
+              Designed around limited technology access.
+            </span>
+          </div>
+
+          <div>
+            <b>Translated material</b>
+            <span>
+              Help reduce language barriers.
+            </span>
+          </div>
+
+          <div>
+            <b>Asynchronous tutoring</b>
+            <span>
+              Students can send problems without requiring a live call.
+            </span>
+          </div>
 
         </div>
+
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
 
-<!-- TUTOR -->
+<!-- =========================================================
+     CONTINUE LEARNING
+========================================================= -->
 
-<section class="section become">
+<section class="section continue-learning">
 
-    <div class="become-box">
+  <div class="section-container">
 
-        <div>
+    <div class="section-header">
 
-            <p class="label">BECOME A TUTOR</p>
+      <div class="section-label">
+        09 / CONTINUE LEARNING
+      </div>
 
-            <h2>
-                Have knowledge?
-                <span>Bridge it.</span>
-            </h2>
+      <h2>
+        The real question is:
+        <span>can they do it alone?</span>
+      </h2>
 
-            <p>
-                Students who want to tutor complete a teaching
-                simulation where Bridge AI evaluates their ability
-                to explain and adapt.
-            </p>
-
-        </div>
-
-        <a href="tutor.html" class="primary-button">
-            Apply to Become a Tutor →
-        </a>
+      <p>
+        Bridge checks whether the student actually improved after
+        the tutoring session.
+      </p>
 
     </div>
 
+
+    <div class="learning-loop">
+
+      <div class="loop-step">
+
+        <span>01</span>
+
+        <strong>Initial problem</strong>
+
+        <p>
+          Student submits the microtopic they struggle with.
+        </p>
+
+      </div>
+
+
+      <div class="loop-arrow">→</div>
+
+
+      <div class="loop-step">
+
+        <span>02</span>
+
+        <strong>Tutoring</strong>
+
+        <p>
+          Tutor teaches with Bridge AI assisting.
+        </p>
+
+      </div>
+
+
+      <div class="loop-arrow">→</div>
+
+
+      <div class="loop-step">
+
+        <span>03</span>
+
+        <strong>Follow-up</strong>
+
+        <p>
+          Bridge creates practice and a diagnostic.
+        </p>
+
+      </div>
+
+
+      <div class="loop-arrow">→</div>
+
+
+      <div class="loop-step">
+
+        <span>04</span>
+
+        <strong>Delta growth</strong>
+
+        <p>
+          Bridge compares understanding before and after.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
+
+<!-- =========================================================
+     GOAL
+========================================================= -->
+
+<section class="section principles">
+
+  <div class="section-container">
+
+    <div class="principles-box">
+
+      <div>
+
+        <div class="section-label">
+          10 / BRIDGE'S GOAL
+        </div>
+
+        <h2>
+          Make education more accessible,
+          not more expensive.
+        </h2>
+
+      </div>
+
+
+      <div class="principles-list">
+
+        <div>Equal access</div>
+        <div>Student safety</div>
+        <div>Privacy</div>
+        <div>Genuine learning</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="final-cta">
+
+      <div>
+
+        <span>READY TO HELP?</span>
+
+        <h3>
+          Students need tutors.
+          Tutors need a place to start.
+        </h3>
+
+      </div>
+
+      <a
+        class="button button-primary"
+        href="tutor.html"
+      >
+        Become a tutor →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
 </main>
 
 
 <footer>
 
-    <div class="footer-inner">
+  <div class="footer-container">
 
-        <div>
-            <a href="#home" class="logo">
-                Bridge <span>AI</span>
-            </a>
+    <div>
 
-            <p>
-                Connecting students with the education
-                they need.
-            </p>
-        </div>
+      <a class="logo" href="#top">
+        <span class="logo-mark">B</span>
+        Bridge<span class="logo-ai">AI</span>
+      </a>
 
-        <div>
-            <a href="#problem">The Problem</a>
-            <a href="#platform">Platform</a>
-            <a href="#ai">AI</a>
-            <a href="#offline">Offline Learning</a>
-            <a href="tutor.html">Become a Tutor</a>
-        </div>
+      <p>
+        AI-assisted tutoring designed around access and genuine learning.
+      </p>
 
     </div>
+
+    <a href="tutor.html">
+      Tutor application →
+    </a>
+
+  </div>
 
 </footer>
 
