@@ -1,280 +1,199 @@
-/* =========================================
-   BRIDGE AI
-   JAVASCRIPT
-========================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
+    /*
+     * BRIDGE AI PRODUCT DEMO
+     * -----------------------
+     * Handles:
+     * - Product tabs
+     * - Duration selection
+     * - Small UI interactions
+     */
 
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
 
-const mobileButton = document.querySelector(".mobile-menu-button");
-const navLinks = document.querySelector(".nav-links");
+    /* =========================
+       PRODUCT TABS
+    ========================= */
 
-if (mobileButton && navLinks) {
+    const tabs = document.querySelectorAll(".demo-tab");
+    const panels = document.querySelectorAll(".demo-panel");
 
-  mobileButton.addEventListener("click", () => {
+    tabs.forEach(tab => {
 
-    navLinks.classList.toggle("mobile-open");
+        tab.addEventListener("click", () => {
 
-    if (navLinks.classList.contains("mobile-open")) {
-      mobileButton.textContent = "✕";
-    } else {
-      mobileButton.textContent = "☰";
-    }
+            const target = tab.dataset.tab;
 
-  });
+            tabs.forEach(t => {
+                t.classList.remove("active");
+            });
 
-}
+            panels.forEach(panel => {
+                panel.classList.remove("active");
+            });
 
+            tab.classList.add("active");
 
-/* =========================================
-   CLOSE MOBILE MENU WHEN LINK IS CLICKED
-========================================= */
+            const targetPanel = document.getElementById(target);
 
-const navigationLinks = document.querySelectorAll(".nav-links a");
-
-navigationLinks.forEach((link) => {
-
-  link.addEventListener("click", () => {
-
-    navLinks.classList.remove("mobile-open");
-
-    if (mobileButton) {
-      mobileButton.textContent = "☰";
-    }
-
-  });
-
-});
-
-
-/* =========================================
-   SMOOTH SCROLL
-========================================= */
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-
-  link.addEventListener("click", function (event) {
-
-    const targetId = this.getAttribute("href");
-
-    if (!targetId || targetId === "#") {
-      return;
-    }
-
-    const target = document.querySelector(targetId);
-
-    if (!target) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const navbarHeight = 76;
-
-    const targetPosition =
-      target.getBoundingClientRect().top +
-      window.scrollY -
-      navbarHeight;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth"
-    });
-
-  });
-
-});
-
-
-/* =========================================
-   NAVBAR SCROLL EFFECT
-========================================= */
-
-const navbar = document.querySelector(".navbar");
-
-function updateNavbar() {
-
-  if (!navbar) {
-    return;
-  }
-
-  if (window.scrollY > 30) {
-
-    navbar.style.boxShadow =
-      "0 8px 30px rgba(16, 35, 63, 0.08)";
-
-  } else {
-
-    navbar.style.boxShadow = "none";
-
-  }
-
-}
-
-window.addEventListener("scroll", updateNavbar);
-
-updateNavbar();
-
-
-/* =========================================
-   SCROLL REVEAL ANIMATION
-========================================= */
-
-const revealElements = document.querySelectorAll(
-  ".problem-card, .step-card, .access-feature, .impact-dashboard, .mission-statement"
-);
-
-revealElements.forEach((element) => {
-  element.classList.add("reveal");
-});
-
-const revealObserver = new IntersectionObserver(
-  (entries, observer) => {
-
-    entries.forEach((entry) => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("visible");
-
-        observer.unobserve(entry.target);
-
-      }
-
-    });
-
-  },
-  {
-    threshold: 0.12
-  }
-);
-
-revealElements.forEach((element) => {
-  revealObserver.observe(element);
-});
-
-
-/* =========================================
-   HERO MOCKUP INTERACTION
-========================================= */
-
-const mockButton = document.querySelector(".mock-button");
-
-if (mockButton) {
-
-  mockButton.addEventListener("click", () => {
-
-    const originalText = mockButton.innerHTML;
-
-    mockButton.innerHTML = "✓ Match found!";
-
-    mockButton.style.background = "#28a66a";
-
-    setTimeout(() => {
-
-      mockButton.innerHTML = originalText;
-      mockButton.style.background = "";
-
-    }, 2200);
-
-  });
-
-}
-
-
-/* =========================================
-   IMPACT DASHBOARD ANIMATION
-========================================= */
-
-const progressBars = document.querySelectorAll(".progress-bar span");
-
-const progressObserver = new IntersectionObserver(
-  (entries, observer) => {
-
-    entries.forEach((entry) => {
-
-      if (entry.isIntersecting) {
-
-        const bar = entry.target;
-        const targetWidth = bar.style.width;
-
-        bar.style.width = "0%";
-
-        requestAnimationFrame(() => {
-
-          setTimeout(() => {
-            bar.style.transition = "width 1.2s ease";
-            bar.style.width = targetWidth;
-          }, 150);
+            if (targetPanel) {
+                targetPanel.classList.add("active");
+            }
 
         });
 
-        observer.unobserve(bar);
+    });
 
-      }
+
+    /* =========================
+       DURATION BUTTONS
+    ========================= */
+
+    const durationButtons = document.querySelectorAll(
+        ".duration-row button"
+    );
+
+    durationButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            durationButtons.forEach(btn => {
+                btn.classList.remove("selected");
+            });
+
+            button.classList.add("selected");
+
+        });
 
     });
 
-  },
-  {
-    threshold: 0.5
-  }
-);
 
-progressBars.forEach((bar) => {
-  progressObserver.observe(bar);
+    /* =========================
+       SMOOTH SCROLL
+    ========================= */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            const targetId = link.getAttribute("href");
+
+            if (targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+    /* =========================
+       MATCHING FACTORS
+    ========================= */
+
+    const factors = document.querySelectorAll(".factor");
+
+    factors.forEach(factor => {
+
+        factor.addEventListener("mouseenter", () => {
+
+            factors.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            factor.classList.add("active");
+
+        });
+
+    });
+
+
+    /* =========================
+       FAKE MATCHING BUTTON
+    ========================= */
+
+    const findButtons = document.querySelectorAll(
+        ".interface-button"
+    );
+
+    findButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const originalText = button.textContent;
+
+            button.textContent = "Finding your best match...";
+
+            button.style.opacity = "0.7";
+
+            setTimeout(() => {
+
+                button.textContent = "Match found ✓";
+                button.style.opacity = "1";
+
+            }, 1200);
+
+            setTimeout(() => {
+
+                button.textContent = originalText;
+
+            }, 3000);
+
+        });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements = document.querySelectorAll(
+        ".workflow-card, .ai-card, .language-card, .factor"
+    );
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.08
+        }
+    );
+
+
+    revealElements.forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(15px)";
+        element.style.transition =
+            "opacity .5s ease, transform .5s ease";
+
+        observer.observe(element);
+
+    });
+
 });
-
-
-/* =========================================
-   ACTIVE NAVIGATION
-========================================= */
-
-const sections = document.querySelectorAll("main section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-function updateActiveNav() {
-
-  let currentSection = "";
-
-  sections.forEach((section) => {
-
-    const sectionTop = section.offsetTop - 130;
-
-    if (window.scrollY >= sectionTop) {
-      currentSection = section.getAttribute("id");
-    }
-
-  });
-
-  navItems.forEach((item) => {
-
-    const href = item.getAttribute("href");
-
-    item.classList.remove("active");
-
-    if (href === `#${currentSection}`) {
-      item.classList.add("active");
-    }
-
-  });
-
-}
-
-window.addEventListener("scroll", updateActiveNav);
-
-
-/* =========================================
-   CONSOLE MESSAGE
-========================================= */
-
-console.log(
-  "%cBridge AI",
-  "font-size: 24px; font-weight: bold; color: #246BFE;"
-);
-
-console.log(
-  "Education without barriers."
-);
