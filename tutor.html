@@ -10,85 +10,42 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Bridge AI — Become a Tutor
-    </title>
+    <title>Become a Tutor — Bridge AI</title>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 
-<body>
+<body class="tutor-page">
 
 
-<header class="navbar">
+<!-- =========================
+     NAV
+========================= -->
+
+<header class="navbar tutor-navbar">
 
     <div class="nav-container">
 
-        <a
-            class="logo"
-            href="index.html"
-        >
-
-            <span class="logo-mark">
-                B
-            </span>
-
-            Bridge
-
-            <span class="logo-ai">
-                AI
-            </span>
-
+        <a href="index.html" class="logo">
+            <span class="logo-mark">B</span>
+            Bridge<span class="logo-ai">AI</span>
         </a>
 
-
-        <nav class="nav-links">
-
-            <a href="index.html#workflow">
-                Workflow
-            </a>
-
-            <a href="index.html#matching">
-                Matching
-            </a>
-
-            <a href="index.html#ai">
-                AI
-            </a>
-
-            <a href="index.html#offline">
-                Offline
-            </a>
-
-        </nav>
-
-
         <a
-            class="nav-button"
             href="index.html"
+            class="nav-button"
         >
-            Back to Bridge →
+            ← Back to Bridge
         </a>
 
     </div>
@@ -96,92 +53,57 @@
 </header>
 
 
-<main>
+<!-- =========================
+     HERO
+========================= -->
 
-
-<!-- =========================================================
-     TUTOR HERO
-========================================================= -->
-
-<section class="hero tutor-hero">
+<section class="tutor-hero hero">
 
     <div class="hero-background"></div>
 
     <div class="hero-content">
 
         <div class="eyebrow">
-
-            <span class="eyebrow-dot"></span>
-
-            TUTOR REGISTRATION
-
+            BECOME A BRIDGE TUTOR
         </div>
-
 
         <h1>
-            Teach with
-            <span>purpose.</span>
+            Your knowledge can
+            <span>help someone.</span>
         </h1>
 
-
         <p class="hero-subtitle">
-
-            Bridge doesn't allow anyone to simply claim
-            the title of tutor. Applicants demonstrate their
-            subject knowledge and teaching ability before
-            being matched with students.
-
+            Bridge connects students who need help with students who
+            have the knowledge and ability to teach them.
         </p>
-
-
-        <div class="hero-stats">
-
-            <div>
-                <strong>01</strong>
-                <span>Build your profile</span>
-            </div>
-
-            <div>
-                <strong>02</strong>
-                <span>Set your availability</span>
-            </div>
-
-            <div>
-                <strong>03</strong>
-                <span>Complete AI assessment</span>
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      APPLICATION
-========================================================= -->
+========================= -->
 
-<section class="section demo">
+<section class="section tutor-application">
 
     <div class="section-container">
-
 
         <div class="section-header">
 
             <div class="section-label">
-                01 / TUTOR PROFILE
+                TUTOR APPLICATION
             </div>
 
             <h2>
-                Tell Bridge what kind of
-                <span>tutor you are.</span>
+                Tell Bridge what
+                <span>you can teach.</span>
             </h2>
 
             <p>
-                Your academic background, subjects, experience
-                and availability help Bridge determine which
-                students you are qualified to support.
+                Your profile helps Bridge understand your subjects,
+                availability and tutoring ability.
             </p>
 
         </div>
@@ -190,20 +112,21 @@
         <div class="tutor-application-layout">
 
 
+            <!-- FORM -->
+
             <form
                 class="application-form"
                 id="tutorForm"
             >
 
 
-                <!-- BASIC INFORMATION -->
+                <!-- PERSONAL -->
 
                 <div class="form-section">
 
                     <div class="form-title">
-                        Basic information
+                        01 — PERSONAL INFORMATION
                     </div>
-
 
                     <div class="form-grid">
 
@@ -215,8 +138,9 @@
 
                             <input
                                 id="firstName"
-                                required
+                                type="text"
                                 placeholder="Alex"
+                                required
                             >
 
                         </div>
@@ -230,8 +154,9 @@
 
                             <input
                                 id="lastName"
-                                required
+                                type="text"
                                 placeholder="Morgan"
+                                required
                             >
 
                         </div>
@@ -245,8 +170,9 @@
 
                             <input
                                 id="school"
+                                type="text"
+                                placeholder="Your high school"
                                 required
-                                placeholder="Your secondary school"
                             >
 
                         </div>
@@ -260,25 +186,11 @@
 
                             <select id="grade">
 
-                                <option>
-                                    Grade 9
-                                </option>
-
-                                <option selected>
-                                    Grade 10
-                                </option>
-
-                                <option>
-                                    Grade 11
-                                </option>
-
-                                <option>
-                                    Grade 12
-                                </option>
-
-                                <option>
-                                    Post-secondary
-                                </option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12</option>
+                                <option>College / University</option>
 
                             </select>
 
@@ -288,7 +200,7 @@
                         <div class="form-field">
 
                             <label for="average">
-                                Academic average (%)
+                                Overall average
                             </label>
 
                             <input
@@ -297,6 +209,7 @@
                                 min="0"
                                 max="100"
                                 placeholder="95"
+                                required
                             >
 
                         </div>
@@ -311,126 +224,65 @@
                 <div class="form-section">
 
                     <div class="form-title">
-                        What can you teach?
+                        02 — SUBJECTS
                     </div>
+
+                    <p class="form-help">
+                        Select the subjects or areas you can confidently teach.
+                    </p>
 
 
                     <div class="checkbox-grid">
 
                         <label class="check">
-
                             <input
                                 type="checkbox"
                                 value="Mathematics"
                             >
-
                             Mathematics
-
                         </label>
 
-
                         <label class="check">
-
-                            <input
-                                type="checkbox"
-                                value="Science"
-                            >
-
-                            Science
-
-                        </label>
-
-
-                        <label class="check">
-
-                            <input
-                                type="checkbox"
-                                value="English"
-                            >
-
-                            English
-
-                        </label>
-
-
-                        <label class="check">
-
-                            <input
-                                type="checkbox"
-                                value="French"
-                            >
-
-                            French
-
-                        </label>
-
-
-                        <label class="check">
-
-                            <input
-                                type="checkbox"
-                                value="Computer Science"
-                            >
-
-                            Computer Science
-
-                        </label>
-
-
-                        <label class="check">
-
-                            <input
-                                type="checkbox"
-                                value="Business"
-                            >
-
-                            Business
-
-                        </label>
-
-
-                        <label class="check">
-
                             <input
                                 type="checkbox"
                                 value="Physics"
                             >
-
                             Physics
-
                         </label>
 
+                        <label class="check">
+                            <input
+                                type="checkbox"
+                                value="Chemistry"
+                            >
+                            Chemistry
+                        </label>
 
                         <label class="check">
-
                             <input
                                 type="checkbox"
                                 value="Biology"
                             >
-
                             Biology
+                        </label>
 
+                        <label class="check">
+                            <input
+                                type="checkbox"
+                                value="English"
+                            >
+                            English
+                        </label>
+
+                        <label class="check">
+                            <input
+                                type="checkbox"
+                                value="French"
+                            >
+                            French
                         </label>
 
                     </div>
-
-                </div>
-
-
-                <!-- EXPERIENCE -->
-
-                <div class="form-section">
-
-                    <div class="form-title">
-                        Experience & extracurriculars
-                    </div>
-
-
-                    <textarea
-                        id="experience"
-                        rows="5"
-                        placeholder="Tell Bridge about clubs, sports, leadership, competitions, volunteering, previous tutoring or other experiences..."
-                    ></textarea>
 
                 </div>
 
@@ -440,13 +292,13 @@
                 <div class="form-section">
 
                     <div class="form-title">
-                        When can you tutor?
+                        03 — AVAILABILITY
                     </div>
 
 
                     <p class="form-help">
-                        Bridge uses your calendar availability
-                        when creating matches.
+                        Bridge uses your availability to determine
+                        which students you can actually help.
                     </p>
 
 
@@ -454,67 +306,33 @@
 
                         <label class="availability">
                             <input type="checkbox">
-                            Mon
+                            Monday
                         </label>
 
                         <label class="availability">
                             <input type="checkbox">
-                            Tue
+                            Tuesday
                         </label>
 
                         <label class="availability">
                             <input type="checkbox">
-                            Wed
+                            Wednesday
                         </label>
 
                         <label class="availability">
                             <input type="checkbox">
-                            Thu
+                            Thursday
                         </label>
 
                         <label class="availability">
                             <input type="checkbox">
-                            Fri
+                            Friday
                         </label>
 
                         <label class="availability">
                             <input type="checkbox">
-                            Sat
+                            Weekend
                         </label>
-
-                        <label class="availability">
-                            <input type="checkbox">
-                            Sun
-                        </label>
-
-                    </div>
-
-
-                    <div class="calendar-editor">
-
-                        <div class="calendar-editor-header">
-
-                            <strong>
-                                Example weekly calendar
-                            </strong>
-
-                            <span>
-                                Click times to toggle
-                            </span>
-
-                        </div>
-
-
-                        <div class="time-grid">
-
-                            <button>3 PM</button>
-                            <button>4 PM</button>
-                            <button class="time-active">5 PM</button>
-                            <button class="time-active">6 PM</button>
-                            <button>7 PM</button>
-                            <button>8 PM</button>
-
-                        </div>
 
                     </div>
 
@@ -524,11 +342,11 @@
                         <div>
 
                             <strong>
-                                Weekly maximum
+                                Weekly tutoring limit
                             </strong>
 
                             <span>
-                                Maximum theoretical tutoring time.
+                                Maximum time you want to tutor.
                             </span>
 
                         </div>
@@ -536,66 +354,11 @@
 
                         <select id="weeklyLimit">
 
-                            <option value="60 minutes">
-                                60 minutes
-                            </option>
-
-                            <option value="120 minutes">
-                                120 minutes
-                            </option>
-
-                            <option
-                                value="180 minutes"
-                                selected
-                            >
-                                180 minutes
-                            </option>
-
-                            <option value="240 minutes">
-                                240 minutes
-                            </option>
-
-                            <option value="300 minutes">
-                                300 minutes
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="limit-box">
-
-                        <div>
-
-                            <strong>
-                                Daily maximum
-                            </strong>
-
-                            <span>
-                                Prevents one day from being overfilled.
-                            </span>
-
-                        </div>
-
-
-                        <select id="dailyLimit">
-
-                            <option>
-                                30 minutes
-                            </option>
-
-                            <option selected>
-                                60 minutes
-                            </option>
-
-                            <option>
-                                90 minutes
-                            </option>
-
-                            <option>
-                                120 minutes
-                            </option>
+                            <option>1 hour</option>
+                            <option>2 hours</option>
+                            <option>3 hours</option>
+                            <option>5 hours</option>
+                            <option>10 hours</option>
 
                         </select>
 
@@ -609,36 +372,34 @@
                 <div class="form-section">
 
                     <div class="form-title">
-                        Why do you want to tutor?
+                        04 — WHY DO YOU WANT TO TUTOR?
                     </div>
-
 
                     <textarea
                         id="motivation"
                         rows="5"
-                        placeholder="Tell Bridge how you want to help students."
+                        placeholder="Tell us why you want to help other students..."
                     ></textarea>
 
                 </div>
 
 
                 <button
-                    class="submit-button"
                     type="submit"
+                    class="submit-button"
                 >
-                    Submit tutor profile →
+                    Continue to teaching assessment →
                 </button>
-
 
             </form>
 
 
-            <!-- PROFILE PREVIEW -->
+            <!-- PROFILE -->
 
             <aside class="profile-preview">
 
                 <span class="preview-label">
-                    LIVE PROFILE PREVIEW
+                    YOUR BRIDGE PROFILE
                 </span>
 
 
@@ -659,17 +420,9 @@
 
                 <div class="preview-tags">
 
-                    <span>
-                        Math
-                    </span>
-
-                    <span>
-                        Science
-                    </span>
-
-                    <span>
-                        Flexible
-                    </span>
+                    <span>Physics</span>
+                    <span>Mathematics</span>
+                    <span>Grade 10+</span>
 
                 </div>
 
@@ -683,7 +436,7 @@
                         </strong>
 
                         <span>
-                            ACADEMIC AVERAGE
+                            SCHOOL AVERAGE
                         </span>
 
                     </div>
@@ -691,8 +444,8 @@
 
                     <div>
 
-                        <strong id="previewWeekly">
-                            3h
+                        <strong>
+                            5h
                         </strong>
 
                         <span>
@@ -706,19 +459,17 @@
 
                 <div class="verification-box">
 
-                    <span>
-                        ✓
-                    </span>
+                    <span>✓</span>
 
                     <div>
 
                         <strong>
-                            Teaching assessment
+                            Teaching assessment required
                         </strong>
 
                         <small>
-                            Complete the AI simulation
-                            to demonstrate how you teach.
+                            Every tutor completes a Bridge
+                            teaching simulation.
                         </small>
 
                     </div>
@@ -726,30 +477,9 @@
                 </div>
 
 
-                <div class="profile-quality">
-
-                    <span>
-                        PROFILE QUALITY
-                    </span>
-
-                    <div class="quality-bar">
-                        <i></i>
-                    </div>
-
-                    <small>
-                        Complete the teaching simulation
-                        to finish your profile.
-                    </small>
-
-                </div>
-
-
                 <p class="preview-note">
-
-                    Academic performance is only one part
-                    of tutor quality. Bridge should combine
-                    multiple indicators and human review.
-
+                    Your private information is not publicly
+                    displayed to students.
                 </p>
 
             </aside>
@@ -761,211 +491,94 @@
 </section>
 
 
-<!-- =========================================================
-     TEACHING SIMULATION
-========================================================= -->
+<!-- =========================
+     TEACHING ASSESSMENT
+========================= -->
 
-<section
-    class="section ai-section"
-    id="teaching-assessment"
->
+<section class="section tutor-simulation-section">
 
     <div class="section-container">
-
 
         <div class="section-header">
 
             <div class="section-label">
-                02 / AI TEACHING ASSESSMENT
+                AI TEACHING ASSESSMENT
             </div>
 
             <h2>
-                What happens when
-                <span>AI becomes your student?</span>
+                Teach the
+                <span>student.</span>
             </h2>
 
             <p>
-                Every applicant receives a standardized teaching
-                scenario. Bridge AI acts as the student while
-                evaluating how the tutor explains and adapts.
+                Bridge AI can act as a student who is confused,
+                struggling with a concept or needs a different
+                explanation.
             </p>
 
         </div>
 
 
-        <div class="assessment-layout">
+        <div class="tutor-simulation">
 
+            <div class="simulation-header">
 
-            <div class="assessment-explanation">
+                <span>
+                    TEACHING SIMULATION
+                </span>
 
-                <div class="assessment-step">
-
-                    <span>
-                        01
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Standardized prompt
-                        </strong>
-
-                        <p>
-                            Every tutor can receive the same
-                            teaching scenario so applications
-                            can be compared consistently.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="assessment-step">
-
-                    <span>
-                        02
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            AI becomes the learner
-                        </strong>
-
-                        <p>
-                            The AI can behave as confused,
-                            inexperienced, language-limited
-                            or otherwise require adaptation.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="assessment-step">
-
-                    <span>
-                        03
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Bridge evaluates
-                        </strong>
-
-                        <p>
-                            The system can assess accuracy,
-                            clarity, pacing, adaptation,
-                            reasoning and respectful teaching.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="assessment-step">
-
-                    <span>
-                        04
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Human review
-                        </strong>
-
-                        <p>
-                            For a real implementation, AI results
-                            could be combined with supervision or
-                            human review.
-                        </p>
-
-                    </div>
-
-                </div>
+                <small>
+                    PHYSICS · KINEMATICS
+                </small>
 
             </div>
 
 
-            <!-- SIMULATION -->
+            <div class="simulation-question">
 
-            <div class="tutor-simulation">
+                <small>
+                    AI STUDENT
+                </small>
 
-                <div class="simulation-header">
+                <p>
+                    "I understand that an object is moving,
+                    but I don't understand why acceleration changes
+                    its velocity."
+                </p>
 
-                    <span>
-                        STANDARDIZED TUTOR ASSESSMENT
-                    </span>
-
-                    <small>
-                        ILLUSTRATIVE PROTOTYPE
-                    </small>
-
-                </div>
+            </div>
 
 
-                <div class="simulation-question">
+            <div class="simulation-input">
 
-                    <small>
-                        AI STUDENT
-                    </small>
-
-                    <p>
-
-                        “I know that acceleration means
-                        something changes, but I don't understand
-                        why the same force can cause different
-                        acceleration.
-
-                        Can you explain it to me like I'm new
-                        to physics?”
-
-                    </p>
-
-                </div>
+                <textarea
+                    id="teachingAnswer"
+                    placeholder="Explain acceleration to the student as if you were tutoring them..."
+                ></textarea>
 
 
-                <div class="simulation-input">
+                <button id="evaluateTeaching">
+                    Evaluate my teaching →
+                </button>
 
-                    <label>
-                        Your teaching response
-                    </label>
-
-                    <textarea
-                        id="teachingAnswer"
-                        placeholder="Explain the concept as if you were tutoring the student..."
-                    ></textarea>
+            </div>
 
 
-                    <button
-                        id="evaluateTeaching"
-                        type="button"
-                    >
-                        Evaluate teaching →
-                    </button>
+            <div
+                class="evaluation-result"
+                id="evaluationResult"
+            >
 
-                </div>
-
-
-                <div
-                    class="evaluation-result"
-                    id="evaluationResult"
-                >
+                <div class="evaluation-header">
 
                     <div>
 
                         <span>
-                            WAITING FOR RESPONSE
+                            ASSESSMENT
                         </span>
 
                         <strong>
-                            Your illustrative assessment
-                            will appear here.
+                            Complete the simulation above.
                         </strong>
 
                     </div>
@@ -981,151 +594,9 @@
 </section>
 
 
-<!-- =========================================================
-     TUTOR QUALITY
-========================================================= -->
-
-<section class="section tutor-quality">
-
-    <div class="section-container">
-
-
-        <div class="section-header center">
-
-            <div class="section-label">
-                03 / TUTOR QUALITY
-            </div>
-
-            <h2>
-                Don't just measure what tutors
-                <span>know.</span>
-            </h2>
-
-            <p>
-                A strong tutor needs more than a high grade.
-                Bridge can evaluate whether someone can actually
-                communicate knowledge to another person.
-            </p>
-
-        </div>
-
-
-        <div class="quality-grid">
-
-            <div class="quality-card">
-
-                <span>
-                    01
-                </span>
-
-                <strong>
-                    Knowledge accuracy
-                </strong>
-
-                <p>
-                    Does the tutor explain the concept correctly?
-                </p>
-
-            </div>
-
-
-            <div class="quality-card">
-
-                <span>
-                    02
-                </span>
-
-                <strong>
-                    Clarity
-                </strong>
-
-                <p>
-                    Can the tutor explain complicated ideas simply?
-                </p>
-
-            </div>
-
-
-            <div class="quality-card">
-
-                <span>
-                    03
-                </span>
-
-                <strong>
-                    Adaptation
-                </strong>
-
-                <p>
-                    Can the tutor change their explanation when
-                    the student doesn't understand?
-                </p>
-
-            </div>
-
-
-            <div class="quality-card">
-
-                <span>
-                    04
-                </span>
-
-                <strong>
-                    Pacing
-                </strong>
-
-                <p>
-                    Does the tutor give the learner enough time
-                    to process new information?
-                </p>
-
-            </div>
-
-
-            <div class="quality-card">
-
-                <span>
-                    05
-                </span>
-
-                <strong>
-                    Communication
-                </strong>
-
-                <p>
-                    Is the tutor respectful, understandable
-                    and encouraging?
-                </p>
-
-            </div>
-
-
-            <div class="quality-card">
-
-                <span>
-                    06
-                </span>
-
-                <strong>
-                    Reflection
-                </strong>
-
-                <p>
-                    Can the tutor identify what went well and
-                    what they should improve?
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1133,68 +604,15 @@
 
         <div class="footer-brand">
 
-            <a
-                class="logo"
-                href="index.html"
-            >
-
-                <span class="logo-mark">
-                    B
-                </span>
-
-                Bridge
-
-                <span class="logo-ai">
-                    AI
-                </span>
-
+            <a href="index.html" class="logo">
+                <span class="logo-mark">B</span>
+                Bridge<span class="logo-ai">AI</span>
             </a>
 
             <p>
-                Better tutors. Better matches. Better learning.
+                Connecting students with the people and resources
+                that can help them learn.
             </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <div>
-
-                <strong>
-                    BRIDGE
-                </strong>
-
-                <a href="index.html#connection">
-                    Connection
-                </a>
-
-                <a href="index.html#matching">
-                    Matching
-                </a>
-
-                <a href="index.html#ai">
-                    AI
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    TUTOR
-                </strong>
-
-                <a href="#top">
-                    Application
-                </a>
-
-                <a href="#teaching-assessment">
-                    AI Assessment
-                </a>
-
-            </div>
 
         </div>
 
@@ -1203,13 +621,9 @@
 
     <div class="footer-bottom">
 
-        <span>
-            © 2026 Bridge AI — Concept prototype
-        </span>
+        <span>© 2026 Bridge AI</span>
 
-        <span>
-            AI evaluation shown here is illustrative
-        </span>
+        <span>Education should be accessible.</span>
 
     </div>
 
@@ -1219,5 +633,4 @@
 <script src="tutor.js"></script>
 
 </body>
-
 </html>
